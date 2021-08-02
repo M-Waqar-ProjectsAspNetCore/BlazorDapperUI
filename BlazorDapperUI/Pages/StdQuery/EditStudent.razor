@@ -1,0 +1,33 @@
+﻿@page "/editstudent/{Id:int}"
+@inherits EditStudentBase
+
+<h3>Edit Student</h3>
+<hr />
+
+<EditForm Model="Student" OnValidSubmit="EditStudent">
+    <div class="row form-group">
+        <label class="col-4">First Name</label>
+        <div class="col-8">
+            <InputText @bind-Value="Student.FirstName" class="form-control" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-4">Last Name</label>
+        <div class="col-8">
+            <InputText @bind-Value="Student.LastName" class="form-control" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-4">Email Address</label>
+        <div class="col-8">
+            <InputText @bind-Value="Student.EmailAddress" class="form-control" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-4">Middle Name</label>
+        <div class="col-8">
+            <InputText @bind-Value="Student.MiddleName" class="form-control" />
+        </div>
+    </div>
+    <button class="btn btn-primary">Edit Student</button>
+</EditForm>

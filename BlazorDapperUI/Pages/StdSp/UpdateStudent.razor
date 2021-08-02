@@ -1,0 +1,44 @@
+﻿@page "/sp-editstudent/{Id:int}"
+@inherits UpdateStudentBase
+
+<h3>Edit Student</h3>
+<hr />
+
+<EditForm Model="StdModel" OnValidSubmit="StudentUpdate">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="row form-group">
+        <label class="col-4">First Name</label>
+        <div class="col-8">
+            <InputText @bind-Value="StdModel.FirstName" class="form-control" />
+            <ValidationMessage For="@(() => StdModel.FirstName)" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-4">Last Name</label>
+        <div class="col-8">
+            <InputText @bind-Value="StdModel.LastName" class="form-control" />
+            <ValidationMessage For="@(() => StdModel.LastName)" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-4">Email Address</label>
+        <div class="col-8">
+            <InputText @bind-Value="StdModel.EmailAddress" class="form-control" />
+            <ValidationMessage For="@(() => StdModel.EmailAddress)" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-4">Middle Name</label>
+        <div class="col-8">
+            <InputText @bind-Value="StdModel.MiddleName" class="form-control" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-4">Department Id</label>
+        <div class="col-8">
+            <InputNumber @bind-Value="StdModel.DeptId" class="form-control" />
+        </div>
+    </div>
+    <button class="btn btn-primary">Update Student</button>
+</EditForm>
